@@ -8,6 +8,8 @@
 <article class="{{post_class}}">
     <header class="post-header">
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        {{! Add the disqus comment count }}
+        <span class="post-meta"><a href="{{url}}#disqus_thread"></a></span>
     </header>
     <section class="post-excerpt">
         <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>

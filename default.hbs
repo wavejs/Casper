@@ -22,6 +22,21 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}} nav-closed">
+    {{! Disqus configuration }}
+    <script type="text/javascript">
+    var disqus_shortname = 'wavejs';
+    var disqus = {
+        createScript: function(args) {
+            var dsq = document.createElement('script');
+
+            dsq.async = true;
+            dsq.type = 'text/javascript';
+            dsq.src = '//' + args.shortName + '.disqus.com/' + args.jsName;
+
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(dsq);
+        }
+    };
+    </script>
 
     {{navigation}}
 
@@ -44,6 +59,9 @@
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
+    {{! Disqus library for count }}
+    <script type="text/javascript">
+    disqus.createScript({shortName: disqus_shortname, jsName: 'count.js'});
+    </script>
 </body>
 </html>
